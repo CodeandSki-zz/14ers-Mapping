@@ -1,18 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App'; //import main component
+import React, { Component } from 'react';
 
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import reducer from './reducers/index';
-let store = createStore(reducer);
+import '../node_modules/picnic/releases/picnic.min.css'; //use picnic.css styles
 
-import './index.css'; //add some css
+import VisibleCards from './containers/VisibleCards';
+import VisibleMarkers from './containers/VisibleMarkers';
+import SearchFilters from './components/SearchFilters';
 
-ReactDOM.render(
-  (
-      <Provider store={store}>
-          <App />
-      </Provider>
-  ),
-  document.getElementById('root')
+class App extends Component {
+
+  render() {
+    return (
+      <div className="App flex two">
+        <VisibleMarkers />
+        <div id="filters-container">
+          <SearchFilters />
+          <VisibleCards />
+        </div>
+      </div>
+    );
+  }
+}
