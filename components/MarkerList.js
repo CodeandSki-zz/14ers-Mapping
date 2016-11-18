@@ -57,8 +57,20 @@ render() {
             }}
           />
         }
+
+        googleMapElement={
+          <GoogleMap
+            defaultZoom={7}
+            defaultCenter={this.state.defaultCenter}
+          >
+          ...
+          </GoogleMap>
+        }
       />
     </section>
+
+
+
   );
 }
 
